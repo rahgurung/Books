@@ -1,4 +1,12 @@
-# Project 1
+# Books
 
-## Web Programming with Python and JavaScript:
-In this project, I built a book review website. Users are able to register for this website and then log in using their username and password. Once they log in, they will be able to search for books, leave reviews for individual books, and see the reviews made by other people. I also used a third-party API by Goodreads, another book review website, to pull in ratings from a broader audience. Finally, users will be able to query for book details and book reviews programmatically via this website’s API.
+## Web Application for Books Reviewing made with Python and JavaScript:
+This is a book review website built on the shoulders of Flask.
+
+**Features:**
+- Register for individual accounts.
+- Search for books.
+- Leave Reviews.
+- Read Reviews.
+- GoodReads API Integration 
+- API
