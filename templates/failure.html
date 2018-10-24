@@ -1,0 +1,14 @@
+<!--further extends layout.html -->
+{% extends "layout.html" %}
+
+<!-- further extend the title tag -->
+{% block title %}
+  Failure
+{% endblock %}
+
+<!-- further extend the body tag -->
+{% block body %}
+  <br> <br><br><br><br> <br><br><br>
+  <h1 align="center"> {{code}}  </h1>
+  <p align="center"> {{error}} </p>
+{% endblock %}

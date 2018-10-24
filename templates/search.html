@@ -1,0 +1,20 @@
+<!-- further exptending the layout page -->
+{% extends "layout.html" %}
+
+<!-- further extending the title -->
+{% block title %}
+  Books: Results
+{% endblock %}
+
+<!-- further extending the title -->
+{% block body %}
+
+<h4 align = "center">search results:</h4>
+  <div class="list-group">
+    {% for book in books %}
+    <a href="{{url_for("book", isbn = book.isbn)}}" class="list-group-item list-group-item-action">
+      {{ book.title}} by {{book.author}}
+    </a>
+    {% endfor %}
+  </div>
+{% endblock %}

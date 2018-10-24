@@ -1,3 +1,7 @@
+
+# Created by https://www.gitignore.io/api/python
+
+### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -102,3 +106,7 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+
+# End of https://www.gitignore.io/api/python
+/*_session/

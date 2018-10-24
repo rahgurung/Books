@@ -1,0 +1,33 @@
+<!-- further extending layout -->
+{% extends "layout.html" %}
+
+<!-- further extending title tag -->
+{% block title %}
+  Login
+{% endblock %}
+
+<!-- futher extending body tag -->
+{% block body %}
+<form action="/login" method="post">
+  <fieldset>
+    <br>
+    <h1 id="forms" style="padding-left:42%; padding-top:2%; padding-bottom:2%">Login</h1><hr>
+    <!-- email address -->
+    <div class="col-lg-8"  style="padding-left:30%; padding-top:2%; padding-bottom:2%">
+      <div>
+        <label>Username</label>
+        <input name="username" class="form-control" style="border:20px" placeholder="Username" type="text">
+      </div>
+
+      <!-- password -->
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input class="form-control" id="exampleInputPassword1" name="password" placeholder="Password" type="password">
+      </div>
+
+      <!-- submit buttom -->
+      <button type="submit" class="btn btn-primary" >Login</button>
+    </div>
+  </fieldset>
+</form>
+{% endblock %}

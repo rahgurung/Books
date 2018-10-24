@@ -1,0 +1,72 @@
+<!-- further exptending the layout page -->
+{% extends "layout.html" %}
+
+<!-- further extending the title -->
+{% block title %}
+  Books: Book Page
+{% endblock %}
+
+<!-- further extending the body -->
+{% block body %}
+<br>
+  <!-- details of book from database -->
+  <h3 align="center"> {{book.title}} by {{book.author}}</h3>
+    <div>
+      <h5>&nbsp;&nbsp;&nbsp;&nbsp;    Title:
+        <small class="text-muted">{{book.title}}</small>
+      </h5>
+
+      <h5>&nbsp;&nbsp;&nbsp;&nbsp;    Author:
+        <small class="text-muted">{{book.author}}</small>
+      </h5>
+
+      <h5>&nbsp;&nbsp;&nbsp;&nbsp;    ISBN:
+        <small class="text-muted">{{book.isbn}}</small>
+      </h5>
+
+      <h5>&nbsp;&nbsp;&nbsp;&nbsp;    Year:
+        <small class="text-muted">{{book.year}}</small>
+      </h5>
+  </div>
+  <h5 align="center">Average Ratings: {{res1}}</h5>
+  <h5 align="center">Number of Ratings: {{res2}}</h5>
+
+  <!-- reviews form -->
+  <form action="/{{book.isbn}}" method="post">
+  <fieldset>
+
+    <div class="col-lg-8"  style="padding-left:30%; padding-top:2%; padding-bottom:2%">
+      <legend>&nbsp;&nbsp;&nbsp;&nbsp;Reviews:</legend>
+
+      <textarea name="review" rows="4" cols="50">
+      </textarea>
+
+      <label for="exampleSelect1">Rate this book:</label>
+      <select name="rate" class="form-control" id="exampleSelect1">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+      <button align="center" type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </fieldset>
+  </form>
+
+<!-- old reviews -->
+  <div>
+    {% for review in reviews %}
+    <h5>&nbsp;&nbsp;&nbsp;&nbsp;
+      <small class="text-muted">{{review.rate}}/5</small>
+    </h5>
+    <h5>&nbsp;&nbsp;&nbsp;&nbsp;
+      <small class="text-muted">{{review.review}}</small>
+    </h5>
+    {% endfor %}
+</div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,49 @@
+<!-- This page serves as a layout for all other pages-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <!-- required metatags -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial scale=1, shrink-to-fit=no"/>
+
+    <!-- adding bootstrap -->
+    <link href="static/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- adding title with a variable block-->
+    <title>
+      Books: {% block title %}{% endblock %}
+    </title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="/">Books</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarColor02">
+        {% if session.user_id %}
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('logout')}}">Logout</a>
+          </li>
+        </ul>
+        <form action="/search" method="post" class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" name="query" placeholder="Search" type="text">
+          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        {% else %}
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('register')}}">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+          </li>
+        </ul>
+        {% endif %}
+      </div>
+    </nav>
+    {% block body %} {% endblock %}
+    </body>
